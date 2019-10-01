@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+CLEAN_FLAG = ARGV[0];
+BINARY="node-template";
+
+if (CLEAN_FLAG == "clean")
+  system("./target/release/#{BINARY} purge-chain --dev && ./target/release/#{BINARY} --dev");
+else
+  system("./target/release/#{BINARY} --dev");
+end
