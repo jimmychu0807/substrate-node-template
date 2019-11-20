@@ -255,9 +255,9 @@ construct_runtime!(
 		Balances: balances::{default, Error},
 		TransactionPayment: transaction_payment::{Module, Storage},
 		Sudo: sudo,
+		RandomnessCollectiveFlip: randomness_collective_flip::{Module, Call, Storage},
 		// Used for the module template in `./template.rs`
 		TemplateModule: template::{Module, Call, Storage, Event<T>},
-		RandomnessCollectiveFlip: randomness_collective_flip::{Module, Call, Storage},
 	}
 );
 
@@ -346,7 +346,7 @@ impl_runtime_apis! {
 		fn slot_duration() -> u64 {
 			Aura::slot_duration()
 		}
-		
+
 		fn authorities() -> Vec<AuraId> {
 			Aura::authorities()
 		}
